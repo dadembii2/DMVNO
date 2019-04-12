@@ -1,0 +1,15 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: spring-boot-boiler-plate-ingress
+  annotations:
+    ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+  - host: sklabs.icp.ghama.io
+    http:
+      paths:
+        - path: /hello-world
+          backend:
+            serviceName: spring-boot-boiler-plate-service
+            servicePort: 8080

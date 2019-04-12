@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: boiler-plate-k8s
+  datasource:
+    initialize: true
+    platform: h2
+    url: jdbc:h2:mem:messagedb;
+    username: sa
+    password: null

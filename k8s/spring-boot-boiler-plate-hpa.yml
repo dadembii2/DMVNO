@@ -1,0 +1,11 @@
+apiVersion: autoscaling/v1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: spring-boot-boiler-plate-hpa
+spec:
+  maxReplicas: 3
+  minReplicas: 1
+  scaleTargetRef:
+    kind: Deployment
+    name: spring-boot-boiler-plate-deployment
+  targetCPUUtilizationPercentage: 50

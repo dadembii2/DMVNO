@@ -1,0 +1,29 @@
+apiVersion: apps/v1beta2 
+kind: Deployment
+metadata:
+  name: spring-boot-boiler-plate-deployment
+  labels:
+    app: spring-boot-boiler-plate
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: spring-boot-boiler-plate
+  template:
+    metadata:
+      labels:
+        app: spring-boot-boiler-plate
+    spec:
+      containers:
+      - name: spring-boot-boiler-plate
+        image: icp.ghama.io:8500/ns-admin2/spring-boot-boiler-plate:1.0
+        ports:
+        - containerPort: 8080
+        imagePullPolicy: Always
+        resources:
+          requests:
+            memory: "256Mi"
+            cpu: "0.5"
+          limits: 
+            memory: "1Gi" 
+            cpu: "1"

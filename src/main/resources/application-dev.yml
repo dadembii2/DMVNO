@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: dev-env
+  datasource:
+    initialize: true
+    platform: mysql
+    url: jdbc:mysql://${SPRING_BOOT_BOILER_PLATE_SERVICE_HOST}:${SPRING_BOOT_BOILER_PLATE_SERVICE_PORT}/${MYSQL_DATABASE}
+    username: ${MYSQL_USER}
+    password: ${MYSQL_PASSWORD}
+    
